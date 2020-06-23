@@ -23,6 +23,7 @@ connectDB()
 
 app.use('/api/v1/users', require('./routes/users.routes'))
 app.use('/api/v1/auth', require('./routes/auth.routes'))
+app.use('/api/v1/projects', require('./routes/projects.routes'))
 
 app.get('/', (req, res) => {
   return res.status(200).json({

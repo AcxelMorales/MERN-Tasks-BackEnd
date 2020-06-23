@@ -43,11 +43,6 @@ exports.postUser = async (req, res) => {
       if (err) throw err
       return res.json({ token })
     })
-
-    // return res.status(201).json({
-    //   ok: true,
-    //   msg: `Usuario creado - ${req.body.name}`
-    // })
   } catch (error) {
     console.log(error)
     return res.status(400).json({
