@@ -2,6 +2,9 @@ const { validationResult } = require('express-validator')
 
 const Draft = require('../models/Draft.model')
 
+// ==============================================
+//  Create draft controller
+// ==============================================
 exports.postDraft = async (req, res) => {
   const errors = validationResult(req)
 
@@ -31,6 +34,9 @@ exports.postDraft = async (req, res) => {
   }
 }
 
+// ==============================================
+//  Get projects controller
+// ==============================================
 exports.getProjects = async (req, res) => {
   try {
     const projects = await Draft.find({ creator: req.user.id }).sort({ created_at: -1 })
@@ -47,6 +53,9 @@ exports.getProjects = async (req, res) => {
   }
 }
 
+// ==============================================
+//  Update draft controller
+// ==============================================
 exports.updateDraft = async (req, res) => {
   const errors = validationResult(req)
 
@@ -93,6 +102,9 @@ exports.updateDraft = async (req, res) => {
   }
 }
 
+// ==============================================
+//  Delete draft controller
+// ==============================================
 exports.deleteDraft = async (req, res) => {
   try {
     let draft = await Draft.findById(req.params.id)

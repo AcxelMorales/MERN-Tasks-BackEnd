@@ -5,6 +5,9 @@ const authCtrl = require('../controllers/auth.controller')
 
 const router = express.Router()
 
+// ==============================================
+//  Authentication
+// ==============================================
 router.post('/', [
   check('email', 'Agrega un e-mail valido').isEmail(),
   check('password', 'El password debe de contener 6 caracteres').isLength({ min: 6 })

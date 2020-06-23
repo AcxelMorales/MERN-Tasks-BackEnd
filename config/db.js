@@ -1,8 +1,14 @@
 const mongoose = require('mongoose')
-require('dotenv').config({ path: '.env' })
 
+// ==============================================
+//  Settings
+// ==============================================
+require('dotenv').config({ path: '.env' })
 mongoose.set('useCreateIndex', true)
 
+// ==============================================
+//  Database connection
+// ==============================================
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.BD_MONGO, {

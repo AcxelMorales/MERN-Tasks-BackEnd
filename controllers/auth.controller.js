@@ -4,6 +4,9 @@ const { validationResult } = require('express-validator')
 
 const User = require('../models/User.model')
 
+// ==============================================
+//  Authentication controller
+// ==============================================
 exports.auth = async (req, res) => {
   const errors = validationResult(req)
 

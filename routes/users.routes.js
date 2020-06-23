@@ -5,6 +5,9 @@ const usersCtrl = require('../controllers/users.controller')
 
 const router = express.Router()
 
+// ==============================================
+//  Create user
+// ==============================================
 router.post('/', [
   check('name', 'El nombre es obligatorio').not().isEmpty(),
   check('email', 'Agrega un e-mail valido').isEmail(),
